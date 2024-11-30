@@ -1,0 +1,82 @@
+body {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color: #fff;
+}
+
+.container {
+    $container-rem: 30rem;
+    $breakpoint-xs: 36em;
+    $breakpoint-sm: 48em;
+    $breakpoint-md: 62em;
+    $breakpoint-lg: 75em;
+    $breakpoint-xl: 88em;
+
+    & {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 $container-rem;
+    }
+
+    & .form {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.4rem;
+    
+        & label {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        & h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        & input, textarea, select {
+            color: #fff;
+            background: transparent;
+            border: 0.1rem solid #fff;
+
+            &::placeholder {
+              color: #fff;  
+            }
+
+            &::select {
+                border: 0;  
+            }
+        }
+
+        & select {
+            & option {
+                background: black;
+                border: 0;
+            }
+
+            &:valid {
+                color: white;
+            }
+        }
+
+        & button {
+            border: 0;
+            padding: 2rem;
+            width: 14rem;
+        }
+    }
+
+    @media (max-width: $breakpoint-xl) {
+        margin: 0 10rem;
+    }
+
+    @media (max-width: $breakpoint-md) {
+        margin: 0 4rem;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        margin: 0;
+    }
+}
